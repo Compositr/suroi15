@@ -18,18 +18,20 @@
 ## About
 Suroi is an open-source 2D battle royale game inspired by [surviv.io](https://survivio.fandom.com/wiki/Surviv.io_Wiki). It is currently a work in progress.
 
+Suroi15 is a mod of the original Suroi project.
+
 ## Play the game!
-[suroi.io](https://suroi.io)
+[suroi15.dafox.box.ca](https://suroi15.dafox.box.ca)
 
 ## Join the Discord!
-[discord.suroi.io](https://discord.suroi.io)
+[Discord Server](https://discord.gg/cMdHvUtqdq)
 
 ## Installation and setup
-Start by installing [Node.js](https://nodejs.org) and [pnpm](https://pnpm.io).
+Start by installing [Node.js](https://nodejs.org) (v18.x.x) and [pnpm](https://pnpm.io).
 
-Next, [click here to download the repo](https://github.com/HasangerGames/suroi/archive/refs/heads/master.zip), or use the following command to clone it:
+Next, clone the repository:
 ```sh
-git clone https://github.com/HasangerGames/suroi.git
+git clone https://github.com/Compositr/suroi15.git
 ```
 
 To install dependencies, open a terminal in the project root, and run this command:
@@ -45,7 +47,7 @@ To run the game locally, open a terminal in the project root and run the followi
 ```sh
 pnpm dev
 ```
-To open the game, go to http://127.0.0.1:3000 in your browser.
+To open the game, go to http://127.0.0.1:63333 in your browser.
 
 ## Production
 To build for production, run this command in the project root:
@@ -59,6 +61,3 @@ pnpm start
 ```
 
 Production builds are served using [NGINX](https://nginx.org). A sample configuration file can be found [here](nginx.conf).
-
-## Self-hosting
-Visit [the wiki](https://github.com/HasangerGames/suroi/wiki/Self%E2%80%90hosting) for details on how to self-host.
