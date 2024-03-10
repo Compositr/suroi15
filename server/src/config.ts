@@ -16,7 +16,7 @@ export enum GasMode {
 
 export const Config = {
     host: "127.0.0.1",
-    port: 8000,
+    port: 63333,
 
     mapName: "main",
 
@@ -42,7 +42,9 @@ export const Config = {
         eipi: { password: "eipi" },
         radians: { password: "radians" },
         limenade: { password: "limenade" }
-    }
+    },
+
+    disableLobbyClearing: true
 } satisfies ConfigType as ConfigType;
 
 export interface ConfigType {

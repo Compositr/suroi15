@@ -42,7 +42,7 @@ export interface BuildingDefinition extends ObjectDefinition {
     readonly ceilingHitbox?: Hitbox
     readonly hideOnMap?: boolean
     readonly spawnMode?: MapObjectSpawnMode
-    
+
     readonly bridgeSpawnOptions?: {
         maxRiverWidth: number
         landCheckDist: number
@@ -2567,6 +2567,39 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
         ],
         lootSpawners: [
             { table: "ground_loot", position: Vec.create(0, 0) }
+        ]
+    },
+
+    // Desert Rain
+    {
+        idString: "statue_complex",
+        name: "Faction Statues Complex",
+        spawnHitbox: RectangleHitbox.fromRect(300, 50),
+        spawnMode: MapObjectSpawnMode.Grass,
+        rotationMode: 3,
+        groundGraphics: [
+            {
+                color: 0x934414,
+                hitbox: RectangleHitbox.fromRect(200, 25, Vec.create(0, 0))
+            }
+        ],
+        obstacles: [
+            {
+                idString: "red_statue",
+                position: Vec.create(-100, 0)
+            },
+            {
+                idString: "big_desert_tree",
+                position: Vec.create(0, 0)
+            },
+            {
+                idString: "radio_crate",
+                position: Vec.create(0, 10)
+            },
+            {
+                idString: "blue_statue",
+                position: Vec.create(100, 0)
+            }
         ]
     }
 ]);

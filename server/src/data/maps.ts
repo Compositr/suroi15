@@ -60,9 +60,13 @@ export const Maps: Record<string, MapDefinition> = {
             maxWideWidth: 30
         },
         bridges: [
-            "small_bridge"
+            // "small_bridge"
         ],
         buildings: {
+            // Desert Rain
+            statue_complex: 1,
+
+            // Normal
             port_complex: 1,
             sea_traffic_control: 1,
             tugboat_white: 5,
@@ -86,35 +90,33 @@ export const Maps: Record<string, MapDefinition> = {
             oil_tank: 10,
             // christmas_tree: 1, // winter mode
             oak_tree: 250,
-            birch_tree: 25,
-            pine_tree: 15,
+            // birch_tree: 25,
+            // pine_tree: 15,
             regular_crate: 150,
-            flint_crate: 5,
-            aegis_crate: 5,
+            flint_crate: 10,
+            aegis_crate: 10,
             grenade_crate: 40,
             rock: 150,
             river_chest: 1,
             river_rock: 45,
             bush: 110,
             lily_pad: 20,
-            blueberry_bush: 30,
+            // blueberry_bush: 30,
             barrel: 80,
             viking_chest: 1,
             super_barrel: 30,
             melee_crate: 1,
             gold_rock: 1,
-            flint_stone: 1
+            flint_stone: 30
         },
         loots: {
             ground_loot: 60
         },
         places: [
-            { name: "Banana", position: Vec.create(0.23, 0.2) },
-            { name: "Takedown", position: Vec.create(0.23, 0.8) },
-            { name: "Lavlandet", position: Vec.create(0.75, 0.2) },
-            { name: "Noskin Narrows", position: Vec.create(0.72, 0.8) },
-            { name: "Mt. Sanger", position: Vec.create(0.5, 0.35) },
-            { name: "Deepwood", position: Vec.create(0.5, 0.65) }
+            { name: "Southhaven", position: Vec.create(0.75, 0.2) },
+            { name: "Atonement", position: Vec.create(0.72, 0.8) },
+            { name: "Los Perdidos", position: Vec.create(0.5, 0.35) },
+            { name: "The Gulch", position: Vec.create(0.5, 0.65) }
         ]
     },
     debug: {

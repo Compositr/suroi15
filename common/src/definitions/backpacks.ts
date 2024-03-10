@@ -22,11 +22,12 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             tablets: 1,
             "12g": 15,
             "556mm": 90,
+            "45acp": 90,
             "762mm": 90,
             "9mm": 120,
             "127mm": 10,
             power_cell: Infinity,
-            curadell: 1,
+            curadell: 2,
             frag_grenade: 3,
             smoke_grenade: 3
         },
@@ -45,10 +46,11 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "12g": 30,
             "556mm": 180,
             "762mm": 180,
+            "45acp": 180,
             "9mm": 240,
             "127mm": 20,
             power_cell: Infinity,
-            curadell: 2,
+            curadell: 4,
             frag_grenade: 6,
             smoke_grenade: 6
         }
@@ -66,10 +68,11 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "12g": 60,
             "556mm": 240,
             "762mm": 240,
+            "45acp": 240,
             "9mm": 330,
             "127mm": 40,
             power_cell: Infinity,
-            curadell: 3,
+            curadell: 6,
             frag_grenade: 9,
             smoke_grenade: 9
         }
@@ -87,10 +90,11 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "12g": 90,
             "556mm": 300,
             "762mm": 300,
+            "45acp": 300,
             "9mm": 420,
             "127mm": 80,
             power_cell: Infinity,
-            curadell: 4,
+            curadell: 8,
             frag_grenade: 12,
             smoke_grenade: 12
         }

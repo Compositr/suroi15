@@ -20,6 +20,7 @@ export class GunItem extends InventoryItem<GunDefinition> {
     ammo = 0;
 
     private _shots = 0;
+    private _firstShotAccurateAgain = 0;
 
     private _reloadTimeout?: Timeout;
 
@@ -100,8 +101,9 @@ export class GunItem extends InventoryItem<GunDefinition> {
 
         const { moveSpread, shotSpread } = definition;
 
-        const spread = Angle.degreesToRadians((this.owner.isMoving ? moveSpread : shotSpread) / 2);
+        const spread = Angle.degreesToRadians(definition.firstShotAccuracy && this._firstShotAccurateAgain <= Date.now() ? 0 : ((this.owner.isMoving ? moveSpread : shotSpread) / 2));
         const jitter = definition.jitterRadius ?? 0;
+        this._firstShotAccurateAgain = Date.now() + this.definition.recoilDuration + this.definition.fireDelay;
 
         const offset = definition.isDual
             // eslint-disable-next-line no-cond-assign

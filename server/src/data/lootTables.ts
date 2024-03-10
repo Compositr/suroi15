@@ -40,7 +40,6 @@ export const LootTables: Record<string, LootTable> = {
             { tier: "healing_items", weight: 1 },
             { tier: "ammo", weight: 0.5 },
             { tier: "scopes", weight: 0.3 },
-            // { tier: "winter_skins", weight: 0.4 }, // winter mode
             { tier: "throwables", weight: 0.3 },
             { tier: "melee", weight: 0.04 }
         ]
@@ -142,11 +141,11 @@ export const LootTables: Record<string, LootTable> = {
                 { item: "15x_scope", weight: 0.0025 }
             ],
             [
-                { item: "tango_51", spawnSeparately: true, weight: 60 },
-                { item: "tango_51", spawnSeparately: true, count: 2, weight: 30 },
-                { item: "tango_51", spawnSeparately: true, count: 3, weight: 3.5 },
-                { item: "tango_51", spawnSeparately: true, count: 4, weight: 0.1 },
-                { item: "tango_51", spawnSeparately: true, count: 5, weight: 0.0000001 }
+                { item: "sv98", spawnSeparately: true, weight: 60 },
+                { item: "sv98", spawnSeparately: true, count: 2, weight: 30 / 2 },
+                { item: "sv98", spawnSeparately: true, count: 3, weight: 3.5 / 2 },
+                { item: "sv98", spawnSeparately: true, count: 4, weight: 0.1 / 2 },
+                { item: "sv98", spawnSeparately: true, count: 5, weight: 0.0000001 / 2 }
             ]
         ]
     },
@@ -166,7 +165,9 @@ export const LootTables: Record<string, LootTable> = {
         min: 1,
         max: 1,
         loot: [
-            { item: "mosin", weight: 1 }
+            [{ item: "mosin", weight: 1 }],
+            [{ tier: "equipment", weight: 1, count: 2 }, { item: null, weight: 0.5 }],
+            [{ tier: "scopes", weight: 1 }, { item: null, weight: 0.5 }]
         ]
     },
     pumpkin: {
@@ -435,10 +436,13 @@ export const LootTables: Record<string, LootTable> = {
         min: 1,
         max: 1,
         loot: [
-            { item: "vector", weight: 3 },
-            { item: "arx160", weight: 1 },
-            { item: "vepr12", weight: 1 },
-            { item: "g19", weight: 0.05 }
+            { item: "vector", weight: 2 },
+            { item: "aug", weight: 1 },
+            { item: "flues", weight: 0.5 },
+            { item: "m249", weight: 0.1 },
+            { item: "pkp", weight: 0.1 },
+            { item: "m134", weight: 0.1 },
+            { item: "g19", weight: 0.005 }
         ]
     },
     mobile_home_sink: {
@@ -455,18 +459,72 @@ export const LootTables: Record<string, LootTable> = {
         loot: [
             { item: "radio", weight: 1 }
         ]
+    },
+
+    // Desert Rain
+    red_statue: {
+        min: 1,
+        max: 1,
+        loot: [
+            [
+                { item: "super90", weight: 1 }
+            ],
+            [
+                { item: "tactical_helmet", weight: 1 }
+            ],
+            [
+                { item: "machete", weight: 1 }
+            ]
+        ]
+    },
+    blue_statue: {
+        min: 1,
+        max: 1,
+        loot: [
+            [
+                { item: "an94", weight: 1 }
+            ],
+            [
+                { item: "tactical_helmet", weight: 1 }
+            ],
+            [
+                { item: "kukri", weight: 1 }
+            ]
+        ]
+    },
+    radio_crate: {
+        min: 2,
+        max: 2,
+        loot: [
+            [
+                { item: "radio", weight: 1 }
+            ],
+            [
+                { item: "frag_grenade", weight: 1 }
+            ]
+        ]
+    },
+    cactus: {
+        min: 1,
+        max: 1,
+        loot: [
+            { item: null, weight: 1 }
+        ]
     }
 };
 
 export const LootTiers: Record<string, WeightedItem[]> = {
     guns: [
-        { item: "g19", weight: 2 },
+        { item: "fort_17", weight: 2 },
+        { item: "radio", weight: 1 },
+        // { item: "g19", weight: 2 },
         { item: "m1895", weight: 1.75 },
-        { item: "mp40", weight: 1.7 },
-        { item: "saf_200", weight: 1.5 },
-        { item: "cz75a", weight: 1.5 },
+        // { item: "mp40", weight: 1.7 },
+        // { item: "saf_200", weight: 1.5 },
+        // { item: "cz75a", weight: 1.5 },
+        { item: "tommy", weight: 1.7 },
         { item: "hp18", weight: 1.25 },
-        { item: "micro_uzi", weight: 1 },
+        // { item: "micro_uzi", weight: 1 },
         { item: "ak47", weight: 1 },
         { item: "model_37", weight: 0.95 },
         { item: "aug", weight: 0.7 },
@@ -475,17 +533,21 @@ export const LootTiers: Record<string, WeightedItem[]> = {
         { item: "arx160", weight: 0.1 },
         { item: "flues", weight: 0.1 },
         { item: "lewis_gun", weight: 0.05 },
-        { item: "vss", weight: 0.02 },
+        { item: "bar", weight: 0.02 },
+        // { item: "vss, weight: 0.02 },
+        { item: "delisle", weight: 0.01 },
         { item: "sr25", weight: 0.01 },
         { item: "mini14", weight: 0.01 },
         { item: "mcx_spear", weight: 0.01 },
         { item: "cz600", weight: 0.008 },
         { item: "vepr12", weight: 0.008 },
         { item: "stoner_63", weight: 0.005 },
-        { item: "radio", weight: 0.005 },
         { item: "mosin", weight: 0.005 },
         { item: "vector", weight: 0.004 },
-        { item: "tango_51", weight: 0.002 }
+        { item: "tango_51", weight: 0.002 },
+        { item: "sv98", weight: 0.0015 },
+        { item: "m249", weight: 0.0003 },
+        { item: "pkp", weight: 0.0003 }
     ],
     healing_items: [
         { item: "gauze", count: 5, weight: 3 },
@@ -516,29 +578,35 @@ export const LootTiers: Record<string, WeightedItem[]> = {
         { item: "12g", count: 10, weight: 0.75 },
         { item: "556mm", count: 60, weight: 1 },
         { item: "762mm", count: 60, weight: 1 },
-        { item: "9mm", count: 60, weight: 1 }
+        { item: "9mm", count: 60, weight: 1 },
+        { item: "45acp", count: 60, weight: 1 }
     ],
     throwables: [
         { item: "frag_grenade", count: 2, weight: 1 },
         { item: "smoke_grenade", count: 2, weight: 1 }
     ],
     special_guns: [
-        { item: "micro_uzi", weight: 1.25 },
+        { item: "radio", weight: 2.5 },
+        // { item: "micro_uzi", weight: 1.25 },
         { item: "ak47", weight: 1.1 },
         { item: "aug", weight: 1.05 },
         { item: "hp18", weight: 1 },
-        { item: "mp40", weight: 1 },
+        { item: "tommy", weight: 1 },
+        // { item: "mp40", weight: 1 },
+        { item: "model_94", weight: 1 },
         { item: "model_37", weight: 1 },
         { item: "m3k", weight: 0.8 },
         { item: "arx160", weight: 0.8 },
         { item: "flues", weight: 0.8 },
-        { item: "saf_200", weight: 0.75 },
-        { item: "cz75a", weight: 0.75 },
+        // { item: "saf_200", weight: 0.75 },
+        // { item: "cz75a", weight: 0.75 },
         { item: "m16a4", weight: 0.5 },
         { item: "lewis_gun", weight: 0.5 },
-        { item: "g19", weight: 0.45 },
+        { item: "bar", weight: 0.5 },
+        { item: "fort_17", weight: 0.45 },
         { item: "m1895", weight: 0.45 },
-        { item: "vss", weight: 0.07 },
+        // { item: "vss, weight: 0.07 },
+        { item: "delisle", weight: 0.05 },
         { item: "sr25", weight: 0.05 },
         { item: "mini14", weight: 0.05 },
         { item: "mcx_spear", weight: 0.05 },
@@ -548,7 +616,10 @@ export const LootTiers: Record<string, WeightedItem[]> = {
         { item: "radio", weight: 0.01 },
         { item: "mosin", weight: 0.01 },
         { item: "vector", weight: 0.008 },
-        { item: "tango_51", weight: 0.004 }
+        { item: "tango_51", weight: 0.004 },
+        { item: "sv98", weight: 0.003 },
+        { item: "m249", weight: 0.002 },
+        { item: "pkp", weight: 0.002 }
     ],
     special_healing_items: [
         { item: "cola", weight: 3 },
@@ -604,27 +675,37 @@ export const LootTiers: Record<string, WeightedItem[]> = {
     ],
     airdrop_melee: [
         { item: null, weight: 1 },
-        { item: "kbar", weight: 0.1 }
+        { item: "kbar", weight: 0.1 },
+        { item: "maul", weight: 0.03 }
     ],
     airdrop_guns: [
+        { item: "delisle", weight: 1 },
+        { item: "bar", weight: 1 },
         { item: "mini14", weight: 1 },
         { item: "sr25", weight: 1 },
-        { item: "vss", weight: 1 },
+        { item: "stoner_63", weight: 1 },
+        { item: "p90", weight: 1 },
+        // { item: "vss, weight: 1 },
         { item: "vector", weight: 1 },
         { item: "vepr12", weight: 1 },
         { item: "cz600", weight: 1 },
         { item: "mcx_spear", weight: 0.95 },
         { item: "mosin", weight: 0.95 },
         { item: "tango_51", weight: 0.9 },
-        { item: "stoner_63", weight: 0.9 },
-        { item: "radio", weight: 0.1 }
+        { item: "radio", weight: 0.5 },
+        { item: "sv98", weight: 0.2 }
     ],
     gold_airdrop_guns: [
-        { item: "m1_garand", weight: 1.1 },
-        { item: "acr", weight: 1 },
-        { item: "pp19", weight: 1 },
-        { item: "barrett", weight: 0.5 },
+        { item: "m1_garand", weight: 0.8 },
+        { item: "acr", weight: 0.8 },
+        { item: "pp19", weight: 0.7 },
+        { item: "vickers", weight: 0.6 },
+        { item: "pkp", weight: 0.5 },
+        { item: "m249", weight: 0.5 },
         { item: "model_89", weight: 0.5 },
+        { item: "barrett", weight: 0.3 },
+        { item: "awms", weight: 0.05 },
+        { item: "usas12", weight: 0.025 },
         { item: "g19", weight: 0.0005 }
     ],
     winter_skins: [
@@ -639,22 +720,27 @@ export const LootTiers: Record<string, WeightedItem[]> = {
         { item: "gingerbread", weight: 1 }
     ],
     viking_chest_guns: [
+        { item: "tommy", weight: 1 },
         { item: "arx160", weight: 1 },
         { item: "m16a4", weight: 1 },
         { item: "m3k", weight: 1 },
         { item: "flues", weight: 0.9 },
         { item: "mini14", weight: 0.75 },
         { item: "sr25", weight: 0.75 },
-        { item: "vss", weight: 0.75 },
+        { item: "delisle", weight: 0.75 },
+        // { item: "vss, weight: 0.75 },
         { item: "mcx_spear", weight: 0.75 },
         { item: "cz600", weight: 0.7 },
         { item: "vepr12", weight: 0.6 },
         { item: "lewis_gun", weight: 0.6 },
         { item: "mosin", weight: 0.5 },
         { item: "vector", weight: 0.4 },
-        { item: "stoner_63", weight: 0.1 },
+        { item: "stoner_63", weight: 0.3 },
+        { item: "m249", weight: 0.1 },
         { item: "tango_51", weight: 0.1 },
-        { item: "g19", weight: 0.1 }
+        { item: "sv98", weight: 0.1 },
+        { item: "pkp", weight: 0.09 },
+        { item: "g19", weight: 0.0001 }
     ],
     river_chest_guns: [
         { item: "m16a4", weight: 1 },
@@ -662,7 +748,7 @@ export const LootTiers: Record<string, WeightedItem[]> = {
         { item: "mini14", weight: 0.75 },
         { item: "mcx_spear", weight: 0.55 },
         { item: "sr25", weight: 0.5 },
-        { item: "vss", weight: 0.5 },
+        // { item: "vss, weight: 0.5 },
         { item: "mosin", weight: 0.45 },
         { item: "vector", weight: 0.4 },
         { item: "stoner_63", weight: 0.08 },

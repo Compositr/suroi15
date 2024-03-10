@@ -150,6 +150,19 @@ export const SyncedParticles = new ObjectDefinitions<SyncedParticleDefinition>([
             }
         }
     ),
+    createParticle("bromine_gas_particle", "Bromine Gas Particle", {
+        tint: 0xFF9E00,
+        alpha: {
+            start: 0.5,
+            end: 0,
+            easing: "expoIn"
+        },
+        hitbox: new CircleHitbox(5),
+        depletePerMs: {
+            adrenaline: 0.0015,
+            health: 0.003
+        }
+    }),
     createParticle(
         "airdrop_smoke_particle",
         "Airdrop Smoke Particle",

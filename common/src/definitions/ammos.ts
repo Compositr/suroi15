@@ -95,6 +95,18 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
         defaultCasingFrame: "casing_curadell",
         hideUnlessPresent: true
     },
+    {
+        idString: "45acp",
+        name: ".45 ACP",
+        itemType: ItemType.Ammo,
+        maxStackSize: 60,
+        hideUnlessPresent: true,
+        characteristicColor: {
+            hue: 268,
+            saturation: 82,
+            lightness: 56
+        }
+    },
     /*
     {
         idString: "50ae",

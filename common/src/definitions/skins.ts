@@ -321,5 +321,28 @@ export const Skins = new ObjectDefinitions<SkinDefinition>([
         grassTint: true,
         hideEquipment: true,
         hideFromLoadout: true
+    },
+
+    {
+        idString: "blueberry_smoothie",
+        name: "Blueberry Smoothie",
+        itemType: ItemType.Skin,
+        hideFromLoadout: true
+    },
+
+    {
+        idString: "fireball",
+        name: "Fireball",
+        itemType: ItemType.Skin
+    },
+    {
+        idString: "mariner",
+        name: "Mariner",
+        itemType: ItemType.Skin
+    },
+    {
+        idString: "emperor",
+        name: "Emperor",
+        itemType: ItemType.Skin
     }
 ]);

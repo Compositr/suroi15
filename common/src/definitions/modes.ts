@@ -66,10 +66,29 @@ export const Modes: ModeDefinition[] = [
         specialMenuMusic: true,
         reskin: "winter",
         bulletTrailAdjust: "hsl(0, 50%, 80%)"
+    },
+    {
+        idString: "desert",
+        colors: {
+            beach: "#C9843A",
+            border: "hsl(211, 63%, 30%)",
+            gas: "hsla(17, 100%, 50%, 0.55)",
+            grass: "#DFA757",
+            riverBank: "#B25E24",
+            water: "#6A7543"
+        },
+        specialMenuMusic: false,
+        reskin: "desert"
     }
 ];
 
 export const Reskins: Record<string, ReskinDefinition> = {
+    desert: {
+        textures: [
+            "oak_tree_1", "oak_tree_2", "oak_tree_3", "oak_tree_particle", "oak_tree_residue",
+            "bush", "bush_particle_1", "bush_particle_2", "bush_residue"
+        ]
+    },
     fall: { // TODO
         textures: []
     },

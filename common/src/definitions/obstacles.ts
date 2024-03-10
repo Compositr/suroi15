@@ -2636,6 +2636,134 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(
             },
             spawnMode: MapObjectSpawnMode.River,
             allowFlyover: FlyoverPref.Always
+        },
+
+        // Desert Rain
+
+        {
+            idString: "red_statue",
+            name: "Faction Statue Red",
+            material: "stone",
+            health: 200,
+            scale: {
+                spawnMin: 1,
+                spawnMax: 1,
+                destroy: 0.8
+            },
+            hitbox: RectangleHitbox.fromRect(25, 25),
+            rotationMode: RotationMode.None,
+            frames: {
+                particle: "flint_stone_particle",
+                residue: "flint_stone_residue"
+            },
+            particleVariations: 2,
+            hasLoot: true,
+            impenetrable: true
+        },
+        {
+            idString: "blue_statue",
+            name: "Faction Statue Blue",
+            material: "stone",
+            health: 200,
+            scale: {
+                spawnMin: 1,
+                spawnMax: 1,
+                destroy: 0.8
+            },
+            hitbox: RectangleHitbox.fromRect(25, 25),
+            rotationMode: RotationMode.None,
+            frames: {
+                particle: "flint_stone_particle",
+                residue: "flint_stone_residue"
+            },
+            particleVariations: 2,
+            hasLoot: true,
+            impenetrable: true
+        },
+        {
+            idString: "big_desert_tree",
+            name: "Big Desert Tree",
+            material: "tree",
+            health: 300,
+            scale: {
+                spawnMin: 0.9,
+                spawnMax: 1,
+                destroy: 0.5
+            },
+            hitbox: new CircleHitbox(5.5),
+            spawnHitbox: new CircleHitbox(15),
+            rotationMode: RotationMode.Full,
+            zIndex: ZIndexes.ObstaclesLayer4,
+            allowFlyover: FlyoverPref.Never
+        },
+        {
+            idString: "radio_crate",
+            name: "Radio Crate",
+            material: "crate",
+            health: 100,
+            scale: {
+                spawnMin: 1,
+                spawnMax: 1,
+                destroy: 0.6
+            },
+            hitbox: RectangleHitbox.fromRect(9.15, 6.3),
+            rotationMode: RotationMode.Limited,
+            allowFlyover: FlyoverPref.Always,
+            frames: {
+                particle: "crate_particle",
+                residue: "regular_crate_residue"
+            },
+            hasLoot: true
+        },
+        {
+            idString: "cactus",
+            name: "Cactus",
+            material: "tree",
+            health: 120,
+            scale: {
+                spawnMin: 0.8,
+                spawnMax: 1,
+                destroy: 0.6
+            },
+            hitbox: new CircleHitbox(5),
+            spawnHitbox: new CircleHitbox(5),
+            rotationMode: RotationMode.Full,
+            variations: 3,
+            zIndex: ZIndexes.ObstaclesLayer4,
+            allowFlyover: FlyoverPref.Sometimes,
+            hasLoot: true
+        },
+        {
+            idString: "bromine_crate",
+            name: "Bromine Crate",
+            material: "crate",
+            health: 100,
+            scale: {
+                spawnMin: 1,
+                spawnMax: 1,
+                destroy: 0.6
+            },
+            spawnMode: MapObjectSpawnMode.GrassAndSand,
+            hitbox: RectangleHitbox.fromRect(7, 7),
+            rotationMode: RotationMode.Limited,
+            allowFlyover: FlyoverPref.Always,
+            frames: {
+                particle: "crate_particle",
+                residue: "regular_crate_residue"
+            },
+            particlesOnDestroy: {
+                type: "bromine_gas_particle",
+                count: 10,
+                deployAnimation: {
+                    duration: 4000,
+                    staggering: {
+                        delay: 300,
+                        initialAmount: 2
+                    }
+                },
+                spawnRadius: 15
+            },
+            additionalDestroySounds: ["smoke_grenade"]
         }
     ]
 );

@@ -236,5 +236,60 @@ export const Melees: MeleeDefinition[] = [
             useAngle: 0,
             lootScale: 0.7
         }
+    },
+
+    {
+        idString: "machete",
+        name: "Machete Taiga",
+        itemType: ItemType.Melee,
+        damage: 33,
+        obstacleMultiplier: 1,
+        piercingMultiplier: 0,
+        radius: 3.6,
+        offset: Vec.create(5, 0),
+        cooldown: 300,
+        speedMultiplier: 1,
+        maxTargets: Infinity,
+        fists: {
+            animationDuration: 120,
+            left: Vec.create(18, -40),
+            right: Vec.create(10, 45),
+            useLeft: Vec.create(18, -40),
+            useRight: Vec.create(50, -35)
+        },
+        image: {
+            position: Vec.create(50, 35),
+            usePosition: Vec.create(50, -45),
+            angle: 30,
+            useAngle: -10,
+            lootScale: 0.8
+        }
+    },
+    {
+        idString: "kukri",
+        name: "Tallow's Kukri",
+        itemType: ItemType.Melee,
+        damage: 33,
+        obstacleMultiplier: 1,
+        piercingMultiplier: 0,
+        radius: 3.6,
+        offset: Vec.create(5, 0),
+        cooldown: 300,
+        speedMultiplier: 1,
+        maxTargets: Infinity,
+        fists: {
+            animationDuration: 120,
+            left: Vec.create(18, -40),
+            right: Vec.create(10, 45),
+            useLeft: Vec.create(18, -40),
+            useRight: Vec.create(50, -35)
+        },
+        image: {
+            position: Vec.create(50, 30),
+            usePosition: Vec.create(50, -45),
+            angle: 30,
+            useAngle: -10,
+            lootScale: 0.8
+        }
     }
 ];
