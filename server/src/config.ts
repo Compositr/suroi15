@@ -16,9 +16,9 @@ export enum GasMode {
 
 export const Config = {
     host: "127.0.0.1",
-    port: 63333,
+    port: 63334,
 
-    mapName: "main",
+    mapName: "versus",
 
     spawn: { mode: SpawnMode.Normal },
 

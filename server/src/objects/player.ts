@@ -42,6 +42,8 @@ import { Loot } from "./loot";
 import { Obstacle } from "./obstacle";
 import { SyncedParticle } from "./syncedParticle";
 import { type ThrowableDefinition } from "../../../common/src/definitions/throwables";
+import { Backpacks } from "../../../common/src/definitions/backpacks";
+import { Armors } from "../../../common/src/definitions/armors";
 
 export class Player extends BaseGameObject<ObjectCategory.Player> {
     override readonly type = ObjectCategory.Player;
@@ -385,12 +387,59 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             this.inventory.scope = "4x_scope";
         }
 
+        this.inventory.backpack = Backpacks.fromString("tactical_pack");
+        this.inventory.vest = Armors.fromString("tactical_vest");
+        this.inventory.helmet = Armors.fromString("tactical_helmet");
+
+        this.inventory.items.setItem("2x_scope", 1);
+        this.inventory.items.setItem("4x_scope", 1);
+        this.inventory.items.setItem("8x_scope", 1);
+        this.inventory.items.setItem("15x_scope", 1);
+        this.inventory.scope = "4x_scope";
+
+        this.inventory.items.setItem("gauze", 30);
+        this.inventory.items.setItem("medikit", 4);
+        this.inventory.items.setItem("cola", 15);
+        this.inventory.items.setItem("tablets", 4);
+
+        // 1v1 INVENTORY PRESET
+        const weapons: string[] = [
+            // LMGs
+            "pkp",
+            "bar",
+            "m249",
+            "m134",
+            "vickers",
+
+            // Snipers
+            "sv98",
+            "sv98",
+            // "awms" (too op)
+            "delisle",
+            "model_94",
+
+            // Shotguns
+            "m3k",
+            "flues",
+            "vepr12",
+            "model_37",
+
+            // 50v50
+            "super90",
+            "an94"
+        ];
+
+        for (const weapon of weapons) {
+            this.giveGun(weapon);
+        }
+
         this.updateAndApplyModifiers();
         this.dirty.weapons = true;
     }
 
     giveGun(idString: ReferenceTo<GunDefinition>): void {
-        const primaryItem = this.inventory.getWeapon(this.inventory.appendWeapon(idString)) as GunItem;
+        this.inventory.addOrReplaceWeapon(0, idString);
+        const primaryItem = this.inventory.getWeapon(0) as GunItem;
         const primaryDefinition = primaryItem.definition;
 
         primaryItem.ammo = primaryDefinition.capacity;
