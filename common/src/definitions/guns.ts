@@ -1021,7 +1021,7 @@ const GunsRaw: RawGunDefinition[] = [
             speed: 0.25,
             range: 160,
             tracer: {
-                opacity: 0.2
+                opacity: 0.15
             }
         }
     },
@@ -2154,7 +2154,7 @@ const GunsRaw: RawGunDefinition[] = [
         ammoType: "45acp",
         ammoSpawnAmount: 44,
         capacity: 11,
-        reloadTime: 2.5,
+        reloadTime: 2.3,
         fireDelay: 700,
         switchDelay: 700,
         speedMultiplier: 0.92,
@@ -2182,7 +2182,7 @@ const GunsRaw: RawGunDefinition[] = [
             speed: 0.21,
             range: 150,
             tracer: {
-                opacity: 0.5,
+                opacity: 0.15,
                 length: 2
             }
         },
