@@ -416,6 +416,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             "sv98",
             // "awms" (too op)
             "delisle",
+            "mosin",
             "model_94",
 
             // Shotguns
