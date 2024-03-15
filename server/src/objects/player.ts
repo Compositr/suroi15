@@ -404,6 +404,12 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
 
         // 1v1 INVENTORY PRESET
         const weapons: string[] = [
+            // DMRs
+            "sr25",
+            "mini14",
+            "m1_garand",
+            "model89",
+
             // LMGs
             "pkp",
             "bar",
@@ -415,6 +421,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             "sv98",
             "sv98",
             // "awms" (too op)
+            "tango_51",
             "delisle",
             "mosin",
             "model_94",
@@ -427,7 +434,11 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
 
             // 50v50
             "super90",
-            "an94"
+            "an94",
+
+            // Other
+            "mcx_spear",
+            "micro_uzi"
         ];
 
         for (const weapon of weapons) {
