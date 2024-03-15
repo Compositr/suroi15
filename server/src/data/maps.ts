@@ -46,18 +46,27 @@ interface MapDefinition {
 
 export const Maps: Record<string, MapDefinition> = {
     versus: {
-        width: 512,
-        height: 512,
+        width: 690,
+        height: 690,
         oceanSize: 128,
         beachSize: 16,
 
         buildings: {
             mobile_home: 4,
             porta_potty: 6,
-            small_house: 3,
+            small_house: 2,
             container_3: 1,
             container_4: 2,
-            container_5: 1
+            warehouse: 1
+        },
+
+        obstacles: {
+            oil_tank: 1,
+            oak_tree: 5,
+            regular_crate: 15,
+            melee_crate: 1,
+            flint_stone: 1,
+            bush: 20
         }
     },
     main: {
