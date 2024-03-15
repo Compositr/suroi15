@@ -408,7 +408,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             "sr25",
             "mini14",
             "m1_garand",
-            "model89",
+            "model_89",
 
             // LMGs
             "pkp",
