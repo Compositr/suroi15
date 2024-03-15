@@ -408,7 +408,6 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             "sr25",
             "mini14",
             "m1_garand",
-            "model_89",
 
             // LMGs
             "pkp",
@@ -437,8 +436,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             "an94",
 
             // Other
-            "mcx_spear",
-            "micro_uzi"
+            "mcx_spear"
         ];
 
         for (const weapon of weapons) {
