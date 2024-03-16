@@ -66,7 +66,8 @@ export const Maps: Record<string, MapDefinition> = {
             regular_crate: 15,
             melee_crate: 1,
             flint_stone: 1,
-            bush: 20
+            bush: 20,
+            grenade_crate: 5
         }
     },
     main: {
