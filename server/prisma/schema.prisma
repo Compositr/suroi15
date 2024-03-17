@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id // Discord ID
+  username String // Discord Username
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  games Game[]
+  wins  Game[] @relation("victor")
+
+  deaths Kill[] @relation("victim")
+  kills  Kill[] @relation("killer")
+}
+
+model Game {
+  id String @id @default(cuid())
+
+  timestamp DateTime @default(now())
+
+  players  User[]
+  victor   User   @relation(name: "victor", fields: [victorId], references: [id])
+  victorId String
+  
+  kills     Kill[]
+}
+
+model Kill {
+  id String @id @default(cuid())
+
+  timestamp DateTime @default(now())
+
+  victim   User   @relation(name: "victim", fields: [victimId], references: [id])
+  victimId String
+
+  killer   User   @relation(name: "killer", fields: [killerId], references: [id])
+  killerId String
+
+  game   Game   @relation(fields: [gameId], references: [id])
+  gameId String
+}

@@ -16,6 +16,8 @@ export class JoinPacket extends Packet {
     skin!: SkinDefinition;
     badge?: BadgeDefinition;
 
+    loginToken?: string;
+
     emotes: EmoteDefinition[] = [];
 
     override serialize(): void {
@@ -36,6 +38,12 @@ export class JoinPacket extends Packet {
         for (const emote of this.emotes) {
             Emotes.writeToStream(stream, emote);
         }
+
+        const hasToken = this.loginToken !== undefined;
+        stream.writeBoolean(hasToken);
+        if (hasToken) {
+            stream.writeASCIIString(this.loginToken!);
+        }
     }
 
     override deserialize(stream: SuroiBitStream): void {
@@ -48,5 +56,8 @@ export class JoinPacket extends Packet {
         for (let i = 0; i < 6; i++) {
             this.emotes.push(Emotes.readFromStream(stream));
         }
+
+        const hasToken = stream.readBoolean();
+        this.loginToken = hasToken ? stream.readASCIIString() : undefined;
     }
 }

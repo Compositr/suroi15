@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "@damienvesper/bit-buffer": "^1.0.1",
+    "@prisma/client": "5.11.0",
+    "prisma": "^5.11.0",
     "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.41.0",
     "ws": "^8.16.0"
   }
