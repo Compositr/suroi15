@@ -61,9 +61,9 @@ export const Maps: Record<string, MapDefinition> = {
         },
 
         obstacles: {
-            oil_tank: 1,
+            oil_tank: 3,
             oak_tree: 5,
-            regular_crate: 15,
+            regular_crate: 20,
             melee_crate: 1,
             flint_stone: 1,
             bush: 20,
