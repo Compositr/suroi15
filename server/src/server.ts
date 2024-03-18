@@ -9,6 +9,9 @@ import { Config } from "./config";
 import { Game } from "./game";
 import { type Player } from "./objects/player";
 import { Logger } from "./utils/misc";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 /**
  * Apply CORS headers to a response.
@@ -215,6 +218,7 @@ export interface PlayerContainer {
     player?: Player
     readonly ip: string | undefined
     readonly role?: string
+    readonly accountId?: string
 
     readonly isDev: boolean
     readonly nameColor?: number
@@ -228,7 +232,7 @@ app.ws("/play", {
     /**
      * Upgrade the connection to WebSocket.
      */
-    upgrade(res, req, context) {
+    async upgrade(res, req, context) {
         /* eslint-disable-next-line @typescript-eslint/no-empty-function */
         res.onAborted((): void => { });
 
@@ -277,6 +281,27 @@ app.ws("/play", {
         }
 
         //
+        // Accounts
+        //
+
+        const token = req.getHeader("Authorization");
+        let accountId = "";
+        if (token) {
+            const tokenData = await prisma.token.findUnique({
+                where: {
+                    token
+                },
+                include: {
+                    user: true
+                }
+            });
+
+            if (tokenData) {
+                accountId = tokenData.user.id;
+            }
+        }
+
+        //
         // Role
         //
         const password = searchParams.get("password");
@@ -310,7 +335,8 @@ app.ws("/play", {
             role,
             isDev,
             nameColor,
-            lobbyClearing: searchParams.get("lobbyClearing") === "true"
+            lobbyClearing: searchParams.get("lobbyClearing") === "true",
+            accountId: accountId || undefined
         };
         res.upgrade(
             userData,

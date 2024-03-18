@@ -50,6 +50,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
     readonly hitbox: CircleHitbox;
 
     name: string;
+    accountId?: string;
     readonly ip?: string;
 
     readonly loadout: {
@@ -340,6 +341,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
         this.isDev = userData.isDev;
         this.nameColor = userData.nameColor ?? 0;
         this.hasColor = userData.nameColor !== undefined;
+        this.accountId = userData.accountId;
 
         /* Object placing code start //
         this.objectToPlace = new Obstacle(game, "window2", position);
