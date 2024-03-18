@@ -1790,7 +1790,7 @@ const GunsRaw: RawGunDefinition[] = [
         capacity: 10,
         reloadTime: 2.7,
         fireDelay: 1500,
-        switchDelay: 1000,
+        switchDelay: 500,
         speedMultiplier: 0.92,
         recoilMultiplier: 0.4,
         recoilDuration: 1000,
