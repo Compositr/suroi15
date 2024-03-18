@@ -7,7 +7,7 @@
    id="svg8"
    inkscape:version="1.3 (0e150ed, 2023-07-21)"
    xml:space="preserve"
-   sodipodi:docname="aurora_base copy.svg"
+   sodipodi:docname="109_base.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -19,7 +19,7 @@
      id="defs2"><linearGradient
        id="linearGradient1"
        inkscape:collect="always"><stop
-         style="stop-color:#0f90f1;stop-opacity:0.75576037;"
+         style="stop-color:#0fe9f1;stop-opacity:0.75576037;"
          offset="0"
          id="stop2" /><stop
          style="stop-color:#0ff1a5;stop-opacity:0.72580647;"
@@ -92,7 +92,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="6.0448023"
      inkscape:cx="30.852953"
-     inkscape:cy="43.7566"
+     inkscape:cy="43.756601"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
