@@ -25,6 +25,19 @@ model User {
 
   deaths Kill[] @relation("victim")
   kills  Kill[] @relation("killer")
+
+  tokens Token[]
+}
+
+model Token {
+  id String @id @default(cuid())
+
+  token     String
+  expires   DateTime
+  createdAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
 }
 
 model Game {
@@ -35,8 +48,8 @@ model Game {
   players  User[]
   victor   User   @relation(name: "victor", fields: [victorId], references: [id])
   victorId String
-  
-  kills     Kill[]
+
+  kills Kill[]
 }
 
 model Kill {
