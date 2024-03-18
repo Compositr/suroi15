@@ -32,7 +32,7 @@ model User {
 model Token {
   id String @id @default(cuid())
 
-  token     String
+  token     String @unique
   expires   DateTime
   createdAt DateTime @default(now())
 
