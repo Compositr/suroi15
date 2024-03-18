@@ -41,7 +41,9 @@ export const Config = {
         katie: { password: "katie" },
         eipi: { password: "eipi" },
         radians: { password: "radians" },
-        limenade: { password: "limenade" }
+        limenade: { password: "limenade" },
+        1092384: { password: "1092384" },
+        astro: { password: "astro" }
     },
 
     disableLobbyClearing: true
