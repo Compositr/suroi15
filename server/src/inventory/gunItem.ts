@@ -4,7 +4,7 @@ import { RectangleHitbox } from "../../../common/src/utils/hitbox";
 import { Angle, Geometry } from "../../../common/src/utils/math";
 import { type Timeout } from "../../../common/src/utils/misc";
 import { ItemType, type ReferenceTo } from "../../../common/src/utils/objectDefinitions";
-import { randomFloat, randomPointInsideCircle } from "../../../common/src/utils/random";
+import { random, randomFloat, randomPointInsideCircle } from "../../../common/src/utils/random";
 import { Vec } from "../../../common/src/utils/vector";
 import { Obstacle } from "../objects/obstacle";
 import { type Player } from "../objects/player";
@@ -174,6 +174,12 @@ export class GunItem extends InventoryItem<GunDefinition> {
 
         if (definition.summonAirdrop) {
             owner.game.summonAirdrop(owner.position);
+            const max = random(2, 5);
+            for (let i = 0; i < max; i++) {
+                setTimeout(() => {
+                    owner.game.summonAirstrike(Vec.add(owner.position, Vec.create(random(0, 50), random(0, 50))), owner);
+                }, i * 500);
+            }
         }
 
         if (!definition.infiniteAmmo) {

@@ -644,7 +644,26 @@ export class Game {
         this.idAllocator.give(object.id);
         this.updateObjects = true;
     }
+    summonAirstrike(position: Vector, player: Player): void {
+        const direction = randomRotation();
 
+        const planePos = Vec.add(
+            position,
+            Vec.fromPolar(direction, -GameConstants.maxPosition)
+        );
+
+        this.planes.add({ position: planePos, direction });
+
+        this.addTimeout(() => {
+            this.mapPings.add(position);
+            for (let i = 0; i < 12; i++) {
+                this.addTimeout(() => {
+                    const pos = Vec.add(position, Vec.fromPolar(direction, i * 10));
+                    this.addExplosion("air_strike", pos, player);
+                }, i * 50);
+            }
+        }, GameConstants.airdrop.flyTime);
+    }
     summonAirdrop(position: Vector): void {
         const crateDef = Obstacles.fromString("airdrop_crate_locked");
         const crateHitbox = (crateDef.spawnHitbox ?? crateDef.hitbox).clone();
