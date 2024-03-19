@@ -26,6 +26,7 @@ export interface ExplosionDefinition extends ObjectDefinition {
 
     readonly decal?: ReferenceTo<DecalDefinition>;
     readonly shrapnelCount: number;
+    readonly throwableLaunchOverride?: boolean
     readonly ballistics: Omit<BaseBulletDefinition, "goToMouse" | "lastShotFX">;
 }
 

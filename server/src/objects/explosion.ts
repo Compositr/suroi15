@@ -85,7 +85,13 @@ export class Explosion {
                         );
                     }
 
-                    if (object instanceof Loot || object instanceof ThrowableProjectile) {
+                    if (object instanceof Loot) {
+                        object.push(
+                            Angle.betweenPoints(object.position, this.position),
+                            (max - dist) * 0.01
+                        );
+                    }
+                    if (object instanceof ThrowableProjectile && this.definition.throwableLaunchOverride !== true) {
                         object.push(
                             Angle.betweenPoints(object.position, this.position),
                             (max - dist) * 0.01
