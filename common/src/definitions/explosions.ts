@@ -2,32 +2,32 @@ import {
     ObjectDefinitions,
     type BaseBulletDefinition,
     type ObjectDefinition,
-    type ReferenceTo,
+    type ReferenceTo
 } from "../utils/objectDefinitions";
 import { type DecalDefinition } from "./decals";
 
 export interface ExplosionDefinition extends ObjectDefinition {
-    readonly damage: number;
-    readonly obstacleMultiplier: number;
+    readonly damage: number
+    readonly obstacleMultiplier: number
     readonly radius: {
-        readonly min: number;
-        readonly max: number;
-    };
+        readonly min: number
+        readonly max: number
+    }
     readonly cameraShake: {
-        readonly duration: number;
-        readonly intensity: number;
-    };
+        readonly duration: number
+        readonly intensity: number
+    }
     readonly animation: {
-        readonly duration: number;
-        readonly tint: number | `#${string}`;
-        readonly scale: number;
-    };
-    readonly sound?: string; // TODO: move the barrel and super barrel destroy sounds to explosion sounds
+        readonly duration: number
+        readonly tint: number | `#${string}`
+        readonly scale: number
+    }
+    readonly sound?: string // TODO: move the barrel and super barrel destroy sounds to explosion sounds
 
-    readonly decal?: ReferenceTo<DecalDefinition>;
-    readonly shrapnelCount: number;
+    readonly decal?: ReferenceTo<DecalDefinition>
+    readonly shrapnelCount: number
     readonly throwableLaunchOverride?: boolean
-    readonly ballistics: Omit<BaseBulletDefinition, "goToMouse" | "lastShotFX">;
+    readonly ballistics: Omit<BaseBulletDefinition, "goToMouse" | "lastShotFX">
 }
 
 export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
@@ -38,16 +38,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 1,
         radius: {
             min: 8,
-            max: 25,
+            max: 25
         },
         cameraShake: {
             duration: 250,
-            intensity: 50,
+            intensity: 50
         },
         animation: {
             duration: 1000,
             tint: 0x91140b,
-            scale: 1.5,
+            scale: 1.5
         },
         shrapnelCount: 10,
         ballistics: {
@@ -56,8 +56,8 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.08,
             range: 20,
             rangeVariance: 1,
-            shrapnel: true,
-        },
+            shrapnel: true
+        }
     },
     {
         idString: "stove_explosion",
@@ -66,16 +66,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 2,
         radius: {
             min: 8,
-            max: 25,
+            max: 25
         },
         cameraShake: {
             duration: 250,
-            intensity: 50,
+            intensity: 50
         },
         animation: {
             duration: 1000,
             tint: 0xff5500,
-            scale: 1.5,
+            scale: 1.5
         },
         shrapnelCount: 10,
         ballistics: {
@@ -84,8 +84,8 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.08,
             range: 20,
             rangeVariance: 1,
-            shrapnel: true,
-        },
+            shrapnel: true
+        }
     },
     {
         idString: "control_panel_explosion",
@@ -94,16 +94,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 1.5,
         radius: {
             min: 8,
-            max: 25,
+            max: 25
         },
         cameraShake: {
             duration: 250,
-            intensity: 50,
+            intensity: 50
         },
         animation: {
             duration: 1000,
             tint: 0xff5500,
-            scale: 1.5,
+            scale: 1.5
         },
         shrapnelCount: 10,
         ballistics: {
@@ -112,8 +112,8 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.08,
             range: 20,
             rangeVariance: 1,
-            shrapnel: true,
-        },
+            shrapnel: true
+        }
     },
     {
         idString: "super_barrel_explosion",
@@ -122,16 +122,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 1,
         radius: {
             min: 8,
-            max: 25,
+            max: 25
         },
         cameraShake: {
             duration: 500,
-            intensity: 100,
+            intensity: 100
         },
         animation: {
             duration: 1500,
             tint: 0xff0000,
-            scale: 2.5,
+            scale: 2.5
         },
         shrapnelCount: 20,
         ballistics: {
@@ -140,8 +140,8 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.08,
             range: 30,
             rangeVariance: 1,
-            shrapnel: true,
-        },
+            shrapnel: true
+        }
     },
     {
         idString: "small_refinery_barrel_explosion",
@@ -150,16 +150,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 2,
         radius: {
             min: 16,
-            max: 40,
+            max: 40
         },
         cameraShake: {
             duration: 750,
-            intensity: 100,
+            intensity: 100
         },
         animation: {
             duration: 1500,
             tint: 0x91140b,
-            scale: 2.5,
+            scale: 2.5
         },
         shrapnelCount: 25,
         ballistics: {
@@ -168,8 +168,8 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.08,
             range: 30,
             rangeVariance: 1,
-            shrapnel: true,
-        },
+            shrapnel: true
+        }
     },
     {
         idString: "large_refinery_barrel_explosion",
@@ -178,16 +178,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 3,
         radius: {
             min: 48,
-            max: 58,
+            max: 58
         },
         cameraShake: {
             duration: 2000,
-            intensity: 100,
+            intensity: 100
         },
         animation: {
             duration: 1500,
             tint: 0xff0000,
-            scale: 5,
+            scale: 5
         },
         shrapnelCount: 50,
         ballistics: {
@@ -196,8 +196,8 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.08,
             range: 60,
             rangeVariance: 1,
-            shrapnel: true,
-        },
+            shrapnel: true
+        }
     },
     {
         idString: "usas_explosion",
@@ -206,16 +206,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 1,
         radius: {
             min: 6,
-            max: 16,
+            max: 16
         },
         cameraShake: {
             duration: 100,
-            intensity: 10,
+            intensity: 10
         },
         animation: {
             duration: 1500,
             tint: 0x6c1313,
-            scale: 0.8,
+            scale: 0.8
         },
         shrapnelCount: 13,
         ballistics: {
@@ -224,10 +224,10 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.06,
             range: 10,
             rangeVariance: 1,
-            shrapnel: true,
+            shrapnel: true
         },
         sound: "usas_explosion",
-        decal: "explosion_decal",
+        decal: "explosion_decal"
     },
     {
         idString: "frag_explosion",
@@ -236,16 +236,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 1.15,
         radius: {
             min: 10,
-            max: 25,
+            max: 25
         },
         cameraShake: {
             duration: 200,
-            intensity: 30,
+            intensity: 30
         },
         animation: {
             duration: 1000,
             tint: 0x91140b,
-            scale: 1.5,
+            scale: 1.5
         },
         shrapnelCount: 10,
         ballistics: {
@@ -254,10 +254,10 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.08,
             range: 20,
             rangeVariance: 1,
-            shrapnel: true,
+            shrapnel: true
         },
         sound: "frag_grenade",
-        decal: "frag_explosion_decal",
+        decal: "frag_explosion_decal"
     },
     {
         idString: "smoke_explosion",
@@ -266,16 +266,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 0,
         radius: {
             min: 0,
-            max: 0,
+            max: 0
         },
         cameraShake: {
             duration: 0,
-            intensity: 0,
+            intensity: 0
         },
         animation: {
             duration: 500,
             tint: 0x8a7c7b,
-            scale: 0.5,
+            scale: 0.5
         },
         shrapnelCount: 0,
         ballistics: {
@@ -283,10 +283,10 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             obstacleMultiplier: 0,
             speed: 0,
             range: 0,
-            shrapnel: false,
+            shrapnel: false
         },
         sound: "smoke_grenade",
-        decal: "smoke_explosion_decal",
+        decal: "smoke_explosion_decal"
     },
     {
         idString: "air_strike",
@@ -295,16 +295,16 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         obstacleMultiplier: 2,
         radius: {
             min: 5 * 2.25,
-            max: 14 * 2.25,
+            max: 14 * 2.25
         },
         cameraShake: {
             duration: 200,
-            intensity: 30,
+            intensity: 30
         },
         animation: {
             duration: 1000,
             tint: 0x91140b,
-            scale: 1.5,
+            scale: 1.5
         },
         shrapnelCount: 10,
         ballistics: {
@@ -313,9 +313,9 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
             speed: 0.1,
             range: 30,
             rangeVariance: 1,
-            shrapnel: true,
+            shrapnel: true
         },
         sound: "frag_grenade",
-        decal: "frag_explosion_decal",
-    },
+        decal: "frag_explosion_decal"
+    }
 ]);

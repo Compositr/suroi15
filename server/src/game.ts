@@ -644,6 +644,7 @@ export class Game {
         this.idAllocator.give(object.id);
         this.updateObjects = true;
     }
+
     summonAirstrike(position: Vector, player: Player): void {
         const direction = randomRotation();
 
@@ -664,6 +665,7 @@ export class Game {
             }
         }, GameConstants.airdrop.flyTime);
     }
+
     summonAirdrop(position: Vector): void {
         const crateDef = Obstacles.fromString("airdrop_crate_locked");
         const crateHitbox = (crateDef.spawnHitbox ?? crateDef.hitbox).clone();
