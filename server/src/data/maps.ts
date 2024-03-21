@@ -75,7 +75,7 @@ export const Maps: Record<string, MapDefinition> = {
             refinery: 1,
             warehouse: 5,
             small_house: 6,
-            mobile_home: 9,
+            //mobile_home: 9,
             porta_potty: 12,
             container_3: 1,
             container_4: 2,
@@ -88,8 +88,9 @@ export const Maps: Record<string, MapDefinition> = {
         },
         obstacles: {
             oil_tank: 10,
+            cactus: 70,
             // christmas_tree: 1, // winter mode
-            oak_tree: 250,
+            oak_tree: 180,
             // birch_tree: 25,
             // pine_tree: 15,
             regular_crate: 150,
@@ -113,7 +114,7 @@ export const Maps: Record<string, MapDefinition> = {
             ground_loot: 60
         },
         places: [
-            { name: "Southhaven", position: Vec.create(0.75, 0.2) },
+            { name: "Southaven", position: Vec.create(0.75, 0.2) },
             { name: "Atonement", position: Vec.create(0.72, 0.8) },
             { name: "Los Perdidos", position: Vec.create(0.5, 0.35) },
             { name: "The Gulch", position: Vec.create(0.5, 0.65) }
