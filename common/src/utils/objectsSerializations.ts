@@ -124,6 +124,15 @@ export interface ObjectsNetData extends BaseObjectsNetData {
         }
     }
     //
+    // Bomb data
+    //
+    [ObjectCategory.Bomb]: {
+        height: number
+        full?: {
+            position: Vector
+        }
+    }
+    //
     // Throwable data
     //
     [ObjectCategory.ThrowableProjectile]: {
@@ -421,6 +430,28 @@ export const ObjectSerializations: { [K in ObjectCategory]: ObjectSerialization<
         }
     },
     [ObjectCategory.Parachute]: {
+        serializePartial(stream, data) {
+            stream.writeFloat(data.height, 0, 1, 8);
+        },
+        serializeFull(stream, data) {
+            this.serializePartial(stream, data);
+            stream.writePosition(data.full.position);
+        },
+        deserializePartial(stream) {
+            return {
+                height: stream.readFloat(0, 1, 8)
+            };
+        },
+        deserializeFull(stream) {
+            return {
+                ...this.deserializePartial(stream),
+                full: {
+                    position: stream.readPosition()
+                }
+            };
+        }
+    },
+    [ObjectCategory.Bomb]: {
         serializePartial(stream, data) {
             stream.writeFloat(data.height, 0, 1, 8);
         },
