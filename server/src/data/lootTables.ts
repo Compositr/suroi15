@@ -433,6 +433,23 @@ export const LootTables: Record<string, LootTable> = {
             { tier: "special_scopes", weight: 0.3 }
         ]
     },
+    locker: {
+        min: 1,
+        max: 1,
+        loot: [
+            { tier: "special_guns", weight: 1 },
+            { tier: "special_healing_items", weight: 0.3 },
+            { tier: "special_equipment", weight: 0.65 },
+            { tier: "special_scopes", weight: 0.65 }
+        ]
+    },
+    cactus: {
+        min: 1,
+        max: 1,
+        loot: [
+            { tier: "special_healing_items", weight: 0.3 }
+        ]
+    },
     briefcase: {
         min: 1,
         max: 1,
@@ -505,13 +522,6 @@ export const LootTables: Record<string, LootTable> = {
             ]
         ]
     },
-    cactus: {
-        min: 1,
-        max: 1,
-        loot: [
-            { item: null, weight: 1 }
-        ]
-    }
 };
 
 export const LootTiers: Record<string, WeightedItem[]> = {
@@ -579,7 +589,7 @@ export const LootTiers: Record<string, WeightedItem[]> = {
         { item: "12g", count: 10, weight: 0.75 },
         { item: "556mm", count: 60, weight: 1 },
         { item: "762mm", count: 60, weight: 1 },
-        { item: "9mm", count: 60, weight: 1 },
+        { item: "9mm", count: 90, weight: 0.005 },
         { item: "45acp", count: 60, weight: 1 }
     ],
     throwables: [
