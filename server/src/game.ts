@@ -32,6 +32,7 @@ import { type GameObject } from "./objects/gameObject";
 import { Loot } from "./objects/loot";
 import { Obstacle } from "./objects/obstacle";
 import { Parachute } from "./objects/parachute";
+import { Bomb } from "./objects/bomb";
 import { Player } from "./objects/player";
 import { SyncedParticle } from "./objects/syncedParticle";
 import { ThrowableProjectile } from "./objects/throwableProj";
@@ -88,6 +89,11 @@ export class Game {
      * All airdrops
      */
     readonly airdrops = new Set<Airdrop>();
+
+    /**
+     * All airstrikes
+     */
+    readonly airstrikes = new Set<Airstrike>();
 
     /**
      * All planes this tick
@@ -555,7 +561,6 @@ export class Game {
 
         return bullet;
     }
-
     addExplosion(type: ReferenceTo<ExplosionDefinition> | ExplosionDefinition, position: Vector, source: GameObject): Explosion {
         const explosion = new Explosion(this, type, position, source);
         this.explosions.add(explosion);
@@ -645,27 +650,6 @@ export class Game {
         this.updateObjects = true;
     }
 
-    summonAirstrike(position: Vector, player: Player): void {
-        const direction = randomRotation();
-
-        const planePos = Vec.add(
-            position,
-            Vec.fromPolar(direction, -GameConstants.maxPosition)
-        );
-
-        this.planes.add({ position: planePos, direction });
-
-        this.addTimeout(() => {
-            this.mapPings.add(position);
-            for (let i = 0; i < 12; i++) {
-                this.addTimeout(() => {
-                    const pos = Vec.add(position, Vec.fromPolar(direction, i * 10));
-                    this.addExplosion("air_strike", pos, player);
-                }, i * 50);
-            }
-        }, GameConstants.airdrop.flyTime);
-    }
-
     summonAirdrop(position: Vector): void {
         const crateDef = Obstacles.fromString("airdrop_crate_locked");
         const crateHitbox = (crateDef.spawnHitbox ?? crateDef.hitbox).clone();
@@ -747,6 +731,31 @@ export class Game {
             this.mapPings.add(position);
         }, GameConstants.airdrop.flyTime);
     }
+    summonAirstrike(position: Vector, player: Player): void {
+        const direction = randomRotation();
+
+        const planePos = Vec.add(
+            position,
+            Vec.fromPolar(direction, -GameConstants.maxPosition)
+        );
+        
+        const airstrike = { position };
+
+        this.airstrikes.add(airstrike);
+
+        this.planes.add({ position: planePos, direction });
+
+        this.addTimeout(() => {
+            this.mapPings.add(position);
+            for (let i = 0; i < 12; i++) {
+                this.addTimeout(() => {
+                    const pos = Vec.add(position, Vec.fromPolar(direction, i * 10));
+                    const bomb = new Bomb(this, pos, airstrike)
+                    this.grid.addObject(bomb);
+                }, i * 50);
+            }
+        }, GameConstants.airdrop.flyTime);
+    }
 
     get aliveCount(): number {
         return this.livingPlayers.size;
@@ -762,4 +771,8 @@ export class Game {
 export interface Airdrop {
     readonly position: Vector
     readonly type: ObstacleDefinition
+}
+
+export interface Airstrike {
+    readonly position: Vector
 }
