@@ -32,6 +32,7 @@ type BaseGunDefinition = InventoryItemDefinition & {
     readonly centerJitterOnMuzzle?: boolean
     readonly shootOnRelease?: boolean
     readonly summonAirdrop?: boolean
+    readonly summonAirstrike?: boolean //temporary; radio summons airstrike
 
     readonly fists: {
         readonly leftZIndex?: number
@@ -753,7 +754,8 @@ const GunsRaw: RawGunDefinition[] = [
         idString: "radio",
         name: "Radio",
         itemType: ItemType.Gun,
-        summonAirdrop: true,
+        //summonAirdrop: true, //temporarily removed airdrop capability
+        summonAirstrike: true,
         ammoType: "curadell",
         ammoSpawnAmount: 1,
         fireDelay: 500,
