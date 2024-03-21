@@ -14,7 +14,8 @@ export enum ObjectCategory {
     Decal,
     Parachute,
     ThrowableProjectile,
-    SyncedParticle
+    SyncedParticle,
+    Bomb
 }
 
 export enum PacketType {
@@ -95,7 +96,8 @@ export enum KillType {
     Suicide,
     TwoPartyInteraction,
     Gas,
-    Airdrop
+    Airdrop,
+    Airstrike
 }
 
 export const DEFAULT_INVENTORY: Record<string, number> = {};
@@ -140,6 +142,11 @@ export const GameConstants = freezeDeep({
         fallTime: 8000,
         flyTime: 30000,
         damage: 300
+    },
+    airstrike: {
+        fallTime: 2800,
+        flyTime: 30000,
+        damage: 100
     }
 });
 
