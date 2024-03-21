@@ -354,7 +354,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
                 Emotes.fromString("suroi_logo"),
                 Emotes.fromString("sad_face"),
                 Emotes.fromString("chicken"),
-                Emotes.fromString("none")
+                Emotes.fromString("rip")
             ]
         };
 
@@ -886,7 +886,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
     /**
      * Deals damage whilst ignoring protective modifiers but not invulnerability
      */
-    piercingDamage(amount: number, source?: GameObject | KillType.Gas | KillType.Airdrop, weaponUsed?: GunItem | MeleeItem | ThrowableItem | Explosion): void {
+    piercingDamage(amount: number, source?: GameObject | KillType.Gas | KillType.Airdrop | KillType.Airstrike, weaponUsed?: GunItem | MeleeItem | ThrowableItem | Explosion): void {
         if (this.invulnerable) return;
 
         amount = this._clampDamageAmount(amount);
@@ -964,7 +964,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
     }
 
     // dies of death
-    die(source?: GameObject | KillType.Gas | KillType.Airdrop, weaponUsed?: GunItem | MeleeItem | ThrowableItem | Explosion): void {
+    die(source?: GameObject | KillType.Gas | KillType.Airdrop | KillType.Airstrike, weaponUsed?: GunItem | MeleeItem | ThrowableItem | Explosion): void {
         // Death logic
         if (this.health > 0 || this.dead) return;
 
@@ -1000,7 +1000,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             */
         }
 
-        if (source instanceof Player || source === KillType.Gas || source === KillType.Airdrop) {
+        if (source instanceof Player || source === KillType.Gas || source === KillType.Airdrop || source === KillType.Airstrike) {
             const killFeedMessage: KillFeedMessage = {
                 messageType: KillFeedMessageType.Kill,
                 playerID: this.id,
@@ -1276,7 +1276,6 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
         this.action?.cancel();
         this.action = action;
     }
-
     override get data(): FullData<ObjectCategory.Player> {
         const data: FullData<ObjectCategory.Player> = {
             position: this.position,
