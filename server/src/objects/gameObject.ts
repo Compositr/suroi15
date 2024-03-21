@@ -11,6 +11,7 @@ import { type Obstacle } from "./obstacle";
 import { type Parachute } from "./parachute";
 import { type Player } from "./player";
 import { type SyncedParticle } from "./syncedParticle";
+import { type Bomb } from "./bomb";
 import { type ThrowableProjectile } from "./throwableProj";
 
 export interface ObjectMapping {
@@ -23,6 +24,7 @@ export interface ObjectMapping {
     [ObjectCategory.Parachute]: Parachute
     [ObjectCategory.ThrowableProjectile]: ThrowableProjectile
     [ObjectCategory.SyncedParticle]: SyncedParticle
+    [ObjectCategory.Bomb]: Bomb
 }
 
 export type GameObject = ObjectMapping[ObjectCategory];
