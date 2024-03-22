@@ -1792,7 +1792,7 @@ const GunsRaw: RawGunDefinition[] = [
         capacity: 10,
         reloadTime: 2.7,
         fireDelay: 1500,
-        switchDelay: 1000,
+        switchDelay: 500,
         speedMultiplier: 0.92,
         recoilMultiplier: 0.4,
         recoilDuration: 1000,
@@ -1882,7 +1882,6 @@ const GunsRaw: RawGunDefinition[] = [
         shotSpread: 4,
         moveSpread: 8,
         length: 8.9,
-        shootOnRelease: true,
         fists: {
             left: Vec.create(106, 0),
             right: Vec.create(40, 0),
