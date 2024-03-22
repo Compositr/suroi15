@@ -1880,7 +1880,6 @@ const GunsRaw: RawGunDefinition[] = [
         shotSpread: 4,
         moveSpread: 8,
         length: 8.9,
-        shootOnRelease: true,
         fists: {
             left: Vec.create(106, 0),
             right: Vec.create(40, 0),
