@@ -2259,6 +2259,25 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(
             hasLoot: true
         },
         {
+            idString: "locker",
+            name: "Locker",
+            material: "appliance",
+            health: 85,
+            reflectBullets: true,
+            scale: {
+                spawnMin: 1.0,
+                spawnMax: 1.0,
+                destroy: 0.7
+            },
+            hitbox: RectangleHitbox.fromRect(7.6, 4.3, Vec.create(0, -0.22)),
+            rotationMode: RotationMode.Limited,
+            frames: {
+                particle: "metal_particle",
+                residue: "cabinet_residue"
+            },
+            hasLoot: true
+        },
+        {
             idString: "briefcase",
             name: "Briefcase",
             material: "appliance",
