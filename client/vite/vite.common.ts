@@ -1,5 +1,6 @@
 import pkg from "../../package.json";
 
+import obfuscator from "rollup-plugin-obfuscator";
 import { splitVendorChunkPlugin, type UserConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { spritesheet } from "vite-spritesheet-plugin";
@@ -37,6 +38,12 @@ const config: UserConfig = {
                 outputFormat: "png",
                 margin: 8,
                 removeExtensions: true
+            }
+        }),
+        obfuscator({
+            global: true,
+            options: {
+                target: "browser"
             }
         })
     ],
