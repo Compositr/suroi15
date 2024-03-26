@@ -521,7 +521,7 @@ export const LootTables: Record<string, LootTable> = {
                 { item: "frag_grenade", weight: 1 }
             ]
         ]
-    },
+    }
 };
 
 export const LootTiers: Record<string, WeightedItem[]> = {

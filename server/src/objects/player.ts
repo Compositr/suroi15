@@ -385,6 +385,14 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             this.inventory.scope = "4x_scope";
         }
 
+        this.inventory.items.setItem("2x_scope", 1);
+        this.inventory.items.setItem("4x_scope", 1);
+        this.inventory.items.setItem("8x_scope", 1);
+        this.inventory.items.setItem("15x_scope", 1);
+        this.inventory.scope = "4x_scope";
+
+        this.giveGun("radio");
+
         this.updateAndApplyModifiers();
         this.dirty.weapons = true;
     }
@@ -1276,6 +1284,7 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
         this.action?.cancel();
         this.action = action;
     }
+
     override get data(): FullData<ObjectCategory.Player> {
         const data: FullData<ObjectCategory.Player> = {
             position: this.position,
