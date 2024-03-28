@@ -2145,7 +2145,63 @@ const GunsRaw: RawGunDefinition[] = [
             range: 120
         }
     },
-
+    // {
+    //     idString: "deagle",
+    //     name: "Desert Eagle",
+    //     itemType: ItemType.Gun,
+    //     ammoType: "50ae",
+    //     ammoSpawnAmount: 28,
+    //     fireDelay: 375,
+    //     switchDelay: 250,
+    //     speedMultiplier: 0.92,
+    //     recoilMultiplier: 0.75,
+    //     recoilDuration: 135,
+    //     fireMode: FireMode.Single,
+    //     shotSpread: 2,
+    //     moveSpread: 5,
+    //     length: 5.1,
+    //     fists: {
+    //         left: Vec.create(40, 0),
+    //         right: Vec.create(40, 0),
+    //         leftZIndex: 4,
+    //         rightZIndex: 4,
+    //         animationDuration: 100
+    //     },
+    //     image: { position: Vec.create(70, 0) },
+    //     casingParticles: [{
+    //         frame: "casing_762x38mmR",
+    //         position: Vec.create(3.5, 0.5),
+    //         count: 7,
+    //         velocity: {
+    //             x: {
+    //                 min: -8,
+    //                 max: -2
+    //             },
+    //             y: {
+    //                 min: 2,
+    //                 max: 9,
+    //                 randomSign: true
+    //             }
+    //         },
+    //         on: "reload"
+    //     }],
+    //     capacity: 7,
+    //     reloadTime: 2.1,
+    //     ballistics: {
+    //         damage: 24.5,
+    //         obstacleMultiplier: 1.5,
+    //         speed: 0.26,
+    //         range: 160
+    //     },
+        dual: {
+            leftRightOffset: 1.3,
+            fireDelay: 187.5,
+            shotSpread: 3,
+            moveSpread: 6,
+            capacity: 14,
+            reloadTime: 4
+        }
+    },
     {
         idString: "delisle",
         name: "De Lisle",
