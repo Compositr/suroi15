@@ -107,12 +107,18 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
             lightness: 56
         }
     },
-    /*
-    {
-        idString: "50ae",
-        name: ".50 AE",
-        itemType: ItemType.Ammo
-    }, */
+    // {
+    //     idString: "50ae",
+    //     name: ".50 AE",
+    //     itemType: ItemType.Ammo,
+    //     maxStackSize: 49,
+    //     hideUnlessPresent: true,
+    //     characteristicColor: {
+    //         hue: 268,
+    //         saturation: 82,
+    //         lightness: 56
+    //     }
+    // },
 
     // Ephemeral ammo types below
 
