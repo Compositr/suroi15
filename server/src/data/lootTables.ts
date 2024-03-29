@@ -420,6 +420,7 @@ export const LootTables: Record<string, LootTable> = {
         loot: [
             { tier: "ammo", weight: 1 },
             { item: "127mm", weight: 0.1 },
+            { item: "50ae", weight: 0.1 },
             { item: "curadell", weight: 0.1 }
         ]
     },
@@ -693,7 +694,9 @@ export const LootTiers: Record<string, WeightedItem[]> = {
         { item: "mcx_spear", weight: 0.95 },
         { item: "mosin", weight: 0.95 },
         { item: "tango_51", weight: 0.9 },
+        // { item: "deagle", weight: 0.7 },
         { item: "radio", weight: 0.5 },
+        // { item: "dual_deagle", weight: 0.25 },
         { item: "sv98", weight: 0.2 }
     ],
     gold_airdrop_guns: [
@@ -707,7 +710,8 @@ export const LootTiers: Record<string, WeightedItem[]> = {
         { item: "barrett", weight: 0.3 },
         { item: "awms", weight: 0.05 },
         { item: "usas12", weight: 0.025 },
-        { item: "g19", weight: 0.0005 }
+        { item: "g19", weight: 0.0005 },
+        { item: "dual_g19", weight: 0.0001 }
     ],
     winter_skins: [
         { item: "peppermint", weight: 1 },
