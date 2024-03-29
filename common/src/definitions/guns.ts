@@ -1749,6 +1749,7 @@ const GunsRaw: RawGunDefinition[] = [
     //     recoilMultiplier: 0.72,
     //     recoilDuration: 500,
     //     fireMode: FireMode.Single,
+    //     firstShotAccuracy: true,
     //     shotSpread: 2.5,
     //     moveSpread: 8.5,
     //     length: 5.1,
