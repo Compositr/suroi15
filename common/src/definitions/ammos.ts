@@ -51,7 +51,7 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
         itemType: ItemType.Ammo,
         maxStackSize: 60,
         characteristicColor: {
-            hue: 210,
+            hue: 221,
             saturation: 100,
             lightness: 65
         },
@@ -75,7 +75,7 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
         itemType: ItemType.Ammo,
         maxStackSize: 10,
         characteristicColor: {
-            hue: 75,
+            hue: 87,
             saturation: 100,
             lightness: 75
         },
@@ -104,15 +104,21 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
         characteristicColor: {
             hue: 268,
             saturation: 82,
-            lightness: 56
+            lightness: 65
         }
     },
-    /*
     {
         idString: "50ae",
         name: ".50 AE",
-        itemType: ItemType.Ammo
-    }, */
+        itemType: ItemType.Ammo,
+        maxStackSize: 49,
+        hideUnlessPresent: true,
+        characteristicColor: {
+            hue: 0,
+            saturation: 0,
+            lightness: 70
+        }
+    },
 
     // Ephemeral ammo types below
 

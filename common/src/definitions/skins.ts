@@ -46,6 +46,18 @@ export const Skins = new ObjectDefinitions<SkinDefinition>([
         roleRequired: "radians"
     },
     {
+        idString: "1092384",
+        name: "1092384",
+        itemType: ItemType.Skin,
+        roleRequired: "1092384"
+    },
+    {
+        idString: "astro",
+        name: "Astronautical",
+        itemType: ItemType.Skin,
+        roleRequired: "astro"
+    },
+    {
         idString: "developr",
         name: "Developr Swag",
         itemType: ItemType.Skin,
