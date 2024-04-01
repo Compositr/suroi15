@@ -1737,48 +1737,48 @@ const GunsRaw: RawGunDefinition[] = [
         recoilMultiplier: 0.7,
         speedMultiplier: 0.9
     },
-    // {
-    //     idString: "deagle",
-    //     name: "Desert Eagle",
-    //     itemType: ItemType.Gun,
-    //     ammoType: "50ae",
-    //     ammoSpawnAmount: 56,
-    //     fireDelay: 160,
-    //     switchDelay: 300,
-    //     speedMultiplier: 0.90,
-    //     recoilMultiplier: 0.72,
-    //     recoilDuration: 500,
-    //     fireMode: FireMode.Single,
-    //     firstShotAccuracy: true,
-    //     shotSpread: 2.5,
-    //     moveSpread: 8.5,
-    //     length: 5.1,
-    //     fists: {
-    //         left: Vec.create(40, 0),
-    //         right: Vec.create(40, 0),
-    //         leftZIndex: 4,
-    //         rightZIndex: 4,
-    //         animationDuration: 100
-    //     },
-    //     image: { position: Vec.create(70, 0) },
-    //     // no casing particles yet
-    //     capacity: 7,
-    //     reloadTime: 2.3,
-    //     ballistics: {
-    //         damage: 35,
-    //         obstacleMultiplier: 1.6,
-    //         speed: 0.28,
-    //         range: 120
-    //     },
-    //     dual: {
-    //         leftRightOffset: 1.3,
-    //         fireDelay: 187.5,
-    //         shotSpread: 2.8,
-    //         moveSpread: 8.8,
-    //         capacity: 14,
-    //         reloadTime: 5
-    //     }
-    // },
+    {
+        idString: "deagle",
+        name: "Desert Eagle",
+        itemType: ItemType.Gun,
+        ammoType: "50ae",
+        ammoSpawnAmount: 56,
+        fireDelay: 160,
+        switchDelay: 300,
+        speedMultiplier: 0.90,
+        recoilMultiplier: 0.72,
+        recoilDuration: 500,
+        fireMode: FireMode.Single,
+        firstShotAccuracy: true,
+        shotSpread: 2.5,
+        moveSpread: 8.5,
+        length: 5.1,
+        fists: {
+            left: Vec.create(40, 0),
+            right: Vec.create(40, 0),
+            leftZIndex: 4,
+            rightZIndex: 4,
+            animationDuration: 100
+        },
+        image: { position: Vec.create(70, 0) },
+        // no casing particles yet
+        capacity: 7,
+        reloadTime: 2.3,
+        ballistics: {
+            damage: 35,
+            obstacleMultiplier: 1.6,
+            speed: 0.28,
+            range: 120
+        },
+        dual: {
+            leftRightOffset: 1.3,
+            fireDelay: 187.5,
+            shotSpread: 2.8,
+            moveSpread: 8.8,
+            capacity: 14,
+            reloadTime: 5
+        }
+    },
     {
         idString: "m134",
         name: "M134",
