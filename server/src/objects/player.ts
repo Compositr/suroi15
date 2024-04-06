@@ -436,7 +436,8 @@ export class Player extends BaseGameObject<ObjectCategory.Player> {
             "an94",
 
             // Other
-            "mcx_spear"
+            "mcx_spear",
+            "dual_deagle"
         ];
 
         for (const weapon of weapons) {
